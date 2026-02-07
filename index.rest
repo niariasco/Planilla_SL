@@ -1,0 +1,144 @@
+###
+@BASE_URL = http://localhost
+
+//Ejemplo
+###
+GET {{ BASE_URL }}/Servicio1/listar2 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/Servicio1/listar HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+
+//Departamentos 
+###
+GET {{ BASE_URL }}/DepartamentoServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/DepartamentoServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Rol 
+###
+GET {{ BASE_URL }}/RolServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/RolServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/RolServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/RolServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/RolServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Puesto 
+###
+GET {{ BASE_URL }}/PuestoServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/PuestoServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Concepto  
+###
+GET {{ BASE_URL }}/ConceptoServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/ConceptoServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Empleado  
+###
+GET {{ BASE_URL }}/EmpleadoServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/EmpleadoServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Planilla 
+###
+GET {{ BASE_URL }}/PlanillaServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/PlanillaServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Comprobante detalle 
+###
+GET {{ BASE_URL }}/CDetalleServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/CDetalleServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Comprobante pago 
+###
+GET {{ BASE_URL }}/CPagoServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/CPagoServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Auditoria
+###
+GET {{ BASE_URL }}/AuditoriaServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/AuditoriaServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+
+{
+  "Usuario": "root",
+  "nombre": "root"
+}
