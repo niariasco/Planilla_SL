@@ -8,6 +8,7 @@ const planilla_rutas = require('./PlanillaServicio.js');
 const comprobantedetalle_rutas  = require('./CDetalleServicio.js');
 const comprobantepago_rutas  = require('./CPagoServicio.js');
 const auditoria_rutas  = require('./AuditoriaServicio.js'); 
+const usuario_rutas  = require('./UsuarioServicio.js'); 
 
 function asignarRutasAExpress(app) {
   app.use('/Servicio1', rutasDelServicio1);
@@ -20,6 +21,7 @@ function asignarRutasAExpress(app) {
   app.use('/CDetalleServicio',comprobantedetalle_rutas);
   app.use('/CPagoServicio',comprobantepago_rutas);
   app.use('/AuditoriaServicio',auditoria_rutas);
+  app.use('/UsuarioServicio',usuario_rutas);
 }
 
 module.exports = asignarRutasAExpress;

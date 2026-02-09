@@ -9,6 +9,14 @@ Router.get('/get/:Id', async (solicitud, respuesta, next) => {
 Router.get('/get', async (solicitud, respuesta, next) => {
   return respuesta.json(await ConceptoServicio.get());
 });
-
+Router.put('/update/:Id', async (solicitud, respuesta, next) => {
+  return respuesta.json(await ConceptoServicio.update(solicitud.params.Id,solicitud.body.nombre,solicitud.body.tipo_movimiento));
+});
+Router.post('/create', async (solicitud, respuesta, next) => {
+  return respuesta.json(await ConceptoServicio.create(solicitud.body.nombre,solicitud.body.tipo_movimiento));
+});
+Router.delete('/delete/:Id', async (solicitud, respuesta, next) => {
+  return respuesta.json(await ConceptoServicio.delete(solicitud.params.Id));
+});
 
 module.exports = Router;

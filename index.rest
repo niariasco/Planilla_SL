@@ -25,6 +25,21 @@ GET {{ BASE_URL }}/DepartamentoServicio/get HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/DepartamentoServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/DepartamentoServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/DepartamentoServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
 
 //Rol 
 ###
@@ -64,6 +79,21 @@ GET {{ BASE_URL }}/PuestoServicio/get/1 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/PuestoServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/PuestoServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/PuestoServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
 
 //Concepto  
 ###
@@ -73,6 +103,48 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
 GET {{ BASE_URL }}/ConceptoServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/ConceptoServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/ConceptoServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/ConceptoServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+//Usuario
+###
+GET {{ BASE_URL }}/UsuarioServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/UsuarioServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/UsuarioServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/UsuarioServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/UsuarioServicio/delete/0 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -88,6 +160,21 @@ GET {{ BASE_URL }}/EmpleadoServicio/get/1 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/UsuarioServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/UsuarioServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/UsuarioServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
 
 //Planilla 
 ###
@@ -97,6 +184,21 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
 GET {{ BASE_URL }}/PlanillaServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/PlanillaServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/PlanillaServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/PlanillaServicio/delete/0 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -112,7 +214,21 @@ GET {{ BASE_URL }}/CDetalleServicio/get/1 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
-
+###
+PUT {{ BASE_URL }}/CDetalleServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/CDetalleServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/CDetalleServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
 //Comprobante pago 
 ###
 GET {{ BASE_URL }}/CPagoServicio/get HTTP/1.1
@@ -125,6 +241,21 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 
+###
+PUT {{ BASE_URL }}/CPagoServicio/update/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+POST {{ BASE_URL }}/CPagoServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+DELETE {{ BASE_URL }}/CPagoServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
 //Auditoria
 ###
 GET {{ BASE_URL }}/AuditoriaServicio/get HTTP/1.1

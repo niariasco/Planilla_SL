@@ -11,9 +11,9 @@ class RolServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`rol`") 
   }
-    async update(nombre, Id) {
+    async update(nombre,Id) {
     return await ejecutarConsulta("UPDATE `rol` SET `nombre` = ? WHERE `rol_id` = ?",
-    [nombre, Id]);
+    [nombre,Id]);
 }
     async create(nombre) {
     return await ejecutarConsulta("INSERT INTO `rol` SET `nombre` = ?"

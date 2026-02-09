@@ -9,5 +9,15 @@ Router.get('/get/:Id', async (solicitud, respuesta, next) => {
 Router.get('/get', async (solicitud, respuesta, next) => {
   return respuesta.json(await CPagoServicio.get());
 });
-
+Router.put('/update/:Id', async (solicitud, respuesta, next) => {
+  return respuesta.json(await CPagoServicio.update(solicitud.params.Id,solicitud.body.planilla_id,solicitud.body.empleado_id,solicitud.body.salarioBruto,solicitud.body.totalBeneficios,solicitud.body.totalDeducciones,solicitud.body.salarioNeto));
+});
+Router.post('/create', async (solicitud, respuesta, next) => {
+  return respuesta.json(await CPagoServicio.create(solicitud.body.planilla_id,solicitud.body.empleado_id,solicitud.body.salarioBruto,solicitud.body.totalBeneficios,solicitud.body.totalDeducciones,solicitud.body.salarioNeto));
+});
+Router.delete('/delete/:Id', async (solicitud, respuesta, next) => {
+  return respuesta.json(await CPagoServicio.delete(solicitud.params.Id));
+});
 module.exports = Router;
+
+/**solicitud.body.planilla_id,solicitud.body.empleado_id,solicitud.body.salarioBruto,solicitud.body.totalBeneficios,solicitud.body.totalDeducciones,solicitud.body.salarioNeto */
