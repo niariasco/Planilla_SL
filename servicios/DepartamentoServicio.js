@@ -11,17 +11,36 @@ class DepartamentoServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`departamento`" ) }
  
-    async update(nombre, Id) {
-    return await ejecutarConsulta("UPDATE `departamento` SET `nombre` = ? WHERE `departamento_id` = ?",
+    async update(nombre, Id, usuarioId) {
+    const resultado = await ejecutarConsulta("UPDATE `departamento` SET `nombre` = ? WHERE `departamento_id` = ?",
     [nombre, Id]);
+
+    await ejecutarConsulta(
+      "INSERT INTO `auditoria` SET `usuario_id` = ?, `accion` = ?, `descripcion` = ?",
+      [usuarioId, "UPDATE", `Se actualizó el departamento con ID ${Id}`]
+    );
+    return resultado; 
 }
-    async create(nombre) {
-    return await ejecutarConsulta( "INSERT INTO `departamento` SET `nombre` = ?"
+
+    async create(nombre,usuarioId) {
+    const resultado = await ejecutarConsulta( "INSERT INTO `departamento` SET `nombre` = ?"
       ,[nombre]);
+      
+    await ejecutarConsulta(
+      "INSERT INTO `auditoria` SET `usuario_id` = ?, `accion` = ?, `descripcion` = ?",
+      [usuarioId, "CREATE", `Se creó el departamento ${nombre}`]
+    );
+
+  return resultado;
+
 }
-    async delete(Id) {
-    return await ejecutarConsulta("DELETE FROM `planilla`.`departamento` WHERE `rol_id` = ?"
+    async delete(Id,usuarioId) {
+    const resultado = await ejecutarConsulta("DELETE FROM `planilla`.`departamento` WHERE `departamento_id` = ?"
       , [Id]);
+      
+      await ejecutarConsulta("INSERT INTO `auditoria` SET `usuario_id` = ?, `accion` = ?, `descripcion` = ?",
+      [usuarioId, "DELETE", `Se eliminó el departamento con ID ${Id}`]);
+    return resultado;
   }
 }
 

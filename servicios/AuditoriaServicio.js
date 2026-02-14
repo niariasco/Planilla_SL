@@ -9,8 +9,9 @@ class AuditoriaServicio {
       , [Id]);
   }
     async get() {
-    return await ejecutarConsulta("SELECT * FROM `planilla`.`auditoria`" ) }
-
+    return await ejecutarConsulta("SELECT * FROM `planilla`.`auditoria`" ) 
+  }
+  
 }
 
 module.exports = new AuditoriaServicio();

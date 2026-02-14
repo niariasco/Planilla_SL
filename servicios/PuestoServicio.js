@@ -11,15 +11,15 @@ class PuestoServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`puesto`" ) }
 
-    async update(nombre,salarioBase,Id) {
+    async update(nombre,salarioBase,Id,usuarioId) {
     return await ejecutarConsulta("UPDATE `puesto` SET `nombre` = ?, `salarioBase` = ? WHERE `puesto_id` = ?",
     [nombre, salarioBase,Id]);
 }
-    async create(nombre,salarioBase) {
+    async create(nombre,salarioBase,usuarioId) {
     return await ejecutarConsulta("INSERT INTO `puesto` SET `nombre` = ?, `salarioBase` = ?"
     [nombre, salarioBase]);
 }
-    async delete(Id) {
+    async delete(Id,usuarioId) {
     return await ejecutarConsulta("DELETE FROM `planilla`.`puesto` WHERE `puesto_id` = ?"
       , [Id]);
   }
