@@ -11,11 +11,11 @@ class PuestoServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`puesto`" ) }
 
-async update(nombre, salarioBase, Id, usuarioId) {
+async update(Id,nombre, salarioBase, usuarioId) {
 
   const resultado = await ejecutarConsulta(
     "UPDATE `puesto` SET `nombre` = ?, `salarioBase` = ? WHERE `puesto_id` = ?",
-    [nombre, salarioBase, Id]
+    [nombre, salarioBase,Id]
   );
 
   await ejecutarConsulta(

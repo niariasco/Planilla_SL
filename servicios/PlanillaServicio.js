@@ -11,7 +11,7 @@ class PlanillaServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`planilla`" ) }
 
-  async update(fechaInicio, fechaFin,Id) {
+  async update(fechaInicio, fechaFin,Id,usuarioId) {
     const resultado= await ejecutarConsulta("UPDATE `planilla` SET `fechaInicio` = ?, `fechaFin` = ? WHERE `planilla_id` = ?",
     [fechaInicio, fechaFin,Id]);
 
@@ -30,7 +30,7 @@ await ejecutarConsulta(
       [usuarioId, "CREATE", `Se creó la planilla de ${nombre} `]);*/
         return resultado;
 }
-    async delete(Id) {
+    async delete(Id,usuarioId) {
        const resultado= await ejecutarConsulta("DELETE FROM `planilla`.`planilla` WHERE `planilla_id` = ?"
       , [Id]);
 

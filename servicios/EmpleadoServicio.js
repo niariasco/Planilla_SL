@@ -11,9 +11,9 @@ class EmpleadoServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`empleado`" ) 
 }
-  async update(nombre, departamento_id, puesto_id, cedula, apellido, fecha_ingreso, salario_actual, estado,Id,usuarioId) {
+  async update(Id,nombre, departamento_id, puesto_id, cedula, apellido, fecha_ingreso, salario_actual, estado,usuarioId) {
     
-    const resultado = await ejecutarConsulta("UPDATE `empleado` SET `nombre` = ?, `departamento_id` = ?, `puesto_id` = ?, `cedula` = ?, `apellido` = ?, `fecha_ingreso` = ?, `salario_actual` = ?, `estado` = ? WHERE `empleado_id` = ?"
+    const resultado = await ejecutarConsulta("UPDATE `empleado` SET `nombre` = ?, `departamento_id` = ?, `puesto_id` = ?, `cedula` = ?, `apellido` = ?, `fecha_ingreso` = ?, `salario_actual` = ?, `estado` = ? WHERE `empleado_id` = ?",
     [nombre, departamento_id, puesto_id, cedula, apellido, fecha_ingreso, salario_actual, estado,Id]);
 
  await ejecutarConsulta(

@@ -11,7 +11,7 @@ class CPagoServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`comprobantepago`" ) }
 
-    async update(planilla_id, empleado_id, salarioBruto, totalBeneficios, totalDeducciones, salarioNeto,Id) {
+    async update(Id,planilla_id, empleado_id, salarioBruto, totalBeneficios, totalDeducciones, salarioNeto,usuarioId) {
     const resultado = await ejecutarConsulta("UPDATE `comprobantepago` SET `planilla_id` = ?, `empleado_id` = ?, `salarioBruto` = ?, `totalBeneficios` = ?, `totalDeducciones` = ?, `salarioNeto` = ? WHERE `comprobantePago_id` = ?",
     [planilla_id, empleado_id, salarioBruto, totalBeneficios, totalDeducciones, salarioNeto,Id]);
 
@@ -29,7 +29,7 @@ return resultado;
 
 return resultado;
 }
-    async delete(Id) {
+    async delete(Id,usuarioId) {
 const resultado =  await ejecutarConsulta("DELETE FROM `comprobantepago`.`rol` WHERE `comprobantePago_id` = ?"
       , [Id]);
 

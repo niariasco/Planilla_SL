@@ -11,7 +11,7 @@ class CDetalleServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`comprobantedetalle`" ) }
 
-  async update(comprobantePago_id, concepto_id, cantidad, monto, Id) {
+  async update(comprobantePago_id, concepto_id, cantidad, monto, Id,usuarioId) {
     const resultado = await ejecutarConsulta("UPDATE `comprobantedetalle` SET `comprobantePago_id` = ?, `concepto_id` = ?, `cantidad` = ?, `monto` = ? WHERE `comprobanteDetalle_id` = ?",
     [comprobantePago_id, concepto_id, cantidad, monto, Id]);
 
@@ -33,7 +33,7 @@ class CDetalleServicio {
 
  return resultado
 }
-    async delete(Id) {
+    async delete(Id,usuarioId) {
     const resultado = await ejecutarConsulta("DELETE FROM `planilla`.`comprobantedetalle` WHERE `comprobanteDetalle_id` = ?"
       , [Id]);
 

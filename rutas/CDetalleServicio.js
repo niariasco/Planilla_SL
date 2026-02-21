@@ -10,13 +10,13 @@ Router.get('/get', async (solicitud, respuesta, next) => {
   return respuesta.json(await CDetalleServicio.get());
 });
 Router.put('/update/:Id', async (solicitud, respuesta, next) => {
-  return respuesta.json(await CDetalleServicio.update(solicitud.params.Id,solicitud.body.comprobantePago_id, solicitud.body.concepto_id, solicitud.body.cantidad, solicitud.body.monto));
+  return respuesta.json(await CDetalleServicio.update(solicitud.params.Id,solicitud.body.comprobantePago_id, solicitud.body.concepto_id, solicitud.body.cantidad, solicitud.body.monto,1));
 });
 Router.post('/create', async (solicitud, respuesta, next) => {
-  return respuesta.json(await CDetalleServicio.create(solicitud.body.comprobantePago_id, solicitud.body.concepto_id, solicitud.body.cantidad, solicitud.body.monto));
+  return respuesta.json(await CDetalleServicio.create(solicitud.body.comprobantePago_id, solicitud.body.concepto_id, solicitud.body.cantidad, solicitud.body.monto,1));
 });
 Router.delete('/delete/:Id', async (solicitud, respuesta, next) => {
-  return respuesta.json(await CDetalleServicio.delete(solicitud.params.Id));
+  return respuesta.json(await CDetalleServicio.delete(solicitud.params.Id,1));
 });
 
 module.exports = Router;

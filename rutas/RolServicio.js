@@ -10,13 +10,13 @@ Router.get('/get', async (solicitud, respuesta, next) => {
   return respuesta.json(await RolServicio.get());
 });
 Router.put('/update/:Id', async (solicitud, respuesta, next) => {
-  return respuesta.json(await RolServicio.update(solicitud.params.Id,solicitud.body.nombre));
+  return respuesta.json(await RolServicio.update(solicitud.params.Id,solicitud.body.nombre,1));
 });
 Router.post('/create', async (solicitud, respuesta, next) => {
-  return respuesta.json(await RolServicio.create(solicitud.body.nombre));
+  return respuesta.json(await RolServicio.create(solicitud.body.nombre,1));
 });
 Router.delete('/delete/:Id', async (solicitud, respuesta, next) => {
-  return respuesta.json(await RolServicio.delete(solicitud.params.Id));
+  return respuesta.json(await RolServicio.delete(solicitud.params.Id,1));
 });
 module.exports = Router;
 

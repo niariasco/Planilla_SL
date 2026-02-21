@@ -26,17 +26,27 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/DepartamentoServicio/update/1 HTTP/1.1
+PUT {{ BASE_URL }}/DepartamentoServicio/update/100 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "HR"
+}
+
 ###
 POST {{ BASE_URL }}/DepartamentoServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "ASO"
+}
+
 ###
-DELETE {{ BASE_URL }}/DepartamentoServicio/delete/0 HTTP/1.1
+DELETE {{ BASE_URL }}/DepartamentoServicio/delete/102 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -53,15 +63,25 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/RolServicio/update/1 HTTP/1.1
+PUT {{ BASE_URL }}/RolServicio/update/13 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "Recursos Humanos"
+}
+
 ###
 POST {{ BASE_URL }}/RolServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "HR"
+}
+
 ###
 DELETE {{ BASE_URL }}/RolServicio/delete/0 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
@@ -75,22 +95,33 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-GET {{ BASE_URL }}/PuestoServicio/get/1 HTTP/1.1
+GET {{ BASE_URL }}/PuestoServicio/get/101 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/PuestoServicio/update/1 HTTP/1.1
+PUT {{ BASE_URL }}/PuestoServicio/update/102 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "Vendor Support",
+  "salarioBase": "500000"
+}
+
 ###
 POST {{ BASE_URL }}/PuestoServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "VS",
+  "salarioBase": "50"
+}
 ###
-DELETE {{ BASE_URL }}/PuestoServicio/delete/0 HTTP/1.1
+DELETE {{ BASE_URL }}/PuestoServicio/delete/101 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -107,17 +138,28 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/ConceptoServicio/update/1 HTTP/1.1
+PUT {{ BASE_URL }}/ConceptoServicio/update/101 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "Exedentes ASO",
+   "tipo_movimiento": "DEDUCCION"
+}
+
 ###
 POST {{ BASE_URL }}/ConceptoServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "SPS",
+  "tipo_movimiento": "BENEFICIO"
+}
 ###
-DELETE {{ BASE_URL }}/ConceptoServicio/delete/0 HTTP/1.1
+DELETE {{ BASE_URL }}/ConceptoServicio/delete/101 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -134,20 +176,53 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/UsuarioServicio/update/1 HTTP/1.1
+PUT {{ BASE_URL }}/UsuarioServicio/update/100 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "email_interno": "MILE@ffofsarchi",
+  "password":  "Temp@123",
+  "rol_id": "4",
+  "empleado_id":"101"
+  }
 ###
 POST {{ BASE_URL }}/UsuarioServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "email_interno": "RUSO@ffofsarchi",
+  "password":  "RUSO",
+  "rol_id": "1",
+  "empleado_id":"101"
+  }
 ###
 DELETE {{ BASE_URL }}/UsuarioServicio/delete/0 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+//USUARIO-TOKEN
+###
+POST {{ BASE_URL }}/UsuarioServicio/autenticarToken HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+###
+POST {{ BASE_URL }}/UsuarioServicio/validarToken HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+###
+POST {{ BASE_URL }}/UsuarioServicio/desautenticarToken HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
 
 //Empleado  
 ###
@@ -161,17 +236,39 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/UsuarioServicio/update/1 HTTP/1.1
+PUT {{ BASE_URL }}/EmpleadoServicio/update/101 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "NICOLE",
+  "departamento_id": "1",
+  "puesto_id": "1",
+  "cedula": "105550896",
+  "apellido": "ARIAS",
+  "fecha_ingreso": "2020-08-15",
+  "salario_actual": "50",
+  "estado": "ACTIVO"
+}
 ###
-POST {{ BASE_URL }}/UsuarioServicio/create HTTP/1.1
+POST {{ BASE_URL }}/EmpleadoServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "nombre": "ADOLFO",
+  "departamento_id": "1",
+  "puesto_id": "1",
+  "cedula": "105550699",
+  "apellido": "ARIAS",
+  "fecha_ingreso": "2020-08-15",
+  "salario_actual": "50",
+  "estado": "ACTIVO"
+}
 ###
-DELETE {{ BASE_URL }}/UsuarioServicio/delete/0 HTTP/1.1
+DELETE {{ BASE_URL }}/EmpleadoServicio/delete/0 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}

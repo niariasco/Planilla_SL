@@ -11,7 +11,7 @@ class DepartamentoServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`departamento`" ) }
  
-    async update(nombre, Id, usuarioId) {
+    async update( Id, nombre, usuarioId) {
     const resultado = await ejecutarConsulta("UPDATE `departamento` SET `nombre` = ? WHERE `departamento_id` = ?",
     [nombre, Id]);
 
@@ -21,7 +21,6 @@ class DepartamentoServicio {
     );
     return resultado; 
 }
-
     async create(nombre,usuarioId) {
     const resultado = await ejecutarConsulta( "INSERT INTO `departamento` SET `nombre` = ?"
       ,[nombre]);
