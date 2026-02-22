@@ -11,7 +11,7 @@ class CDetalleServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`comprobantedetalle`" ) }
 
-  async update(comprobantePago_id, concepto_id, cantidad, monto, Id,usuarioId) {
+  async update(Id,comprobantePago_id, concepto_id, cantidad, monto,usuarioId) {
     const resultado = await ejecutarConsulta("UPDATE `comprobantedetalle` SET `comprobantePago_id` = ?, `concepto_id` = ?, `cantidad` = ?, `monto` = ? WHERE `comprobanteDetalle_id` = ?",
     [comprobantePago_id, concepto_id, cantidad, monto, Id]);
 

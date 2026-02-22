@@ -2,11 +2,14 @@ const { ejecutarConsulta } = require('../db.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-PalabraSecreta = "Secreta06";
 
 class UsuarioServicio {
+  
 
-  constructor() { };
+  constructor() {
+    this.PalabraSecreta = "Secreta2026";
+   };
+
 
     async getId(Id) {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`usuario` WHERE `usuario_id` = ?"
@@ -52,7 +55,7 @@ try{
       "SELECT * FROM usuario WHERE email_interno = ? ",
       [email_interno]
     );
-
+//
     if (usuarios.length === 0) {
       return { ok: false, mensaje: "Usuario no existe" };
     }
@@ -66,11 +69,13 @@ try{
             console.log(err);
             return { ok: false, mensaje: "Error comparando contraseña" };
         }
+//Si la contraseña es correcta
         if (Resultado === true) {
-            return this.generarToken(Usuario.rol_id, Usuario.email_interno);
+            return this.generarToken(Usuario.rol_id, Usuario.email_interno, Usuario.usuario_id);
         } else {
              return { ok: false, mensaje: "Contraseña incorrecta" };
         }
+//Manejo de errores
     } catch (error) {
     console.log(error);
     return { ok: false, mensaje: "Error interno" };
@@ -82,26 +87,37 @@ try{
         // Almacenar en la base de datos para el usuario
         await ejecutarConsulta("UPDATE usuario SET token = ? WHERE usuario_id = ?",
         [token, usuario_id])
-        return token;
+       // return token;
+        return {
+        ok: true,
+        token: token
+    };
 }
 
     async validarToken(solicitud) {
+      //Verificar que el JWT sea válido
+      //Extraer TK
         let token;
         try {
-            token = solicitud.headers.authorization.split(" ")[1];
+            token = solicitud.headers.authorization.split(" ")[1]; //portador|Bearer [0], Token [1]
         } catch (err) {
             return err;
         }
-        let Resultado;
+        let Resultado; 
         // Validación del token
         try {
-            Resultado = await jwt.verify(token, this.PalabraSecreta);
+            Resultado = await jwt.verify(token, this.PalabraSecreta); // payload: ({ rol_id, email_interno }, Secreta2026)
         } catch (err) {
             return err;
         }
-        // Se debe validar que el usuario tenga asignado ese token
-        if (Usuario.Token === token) {
-            return Resultado;
+    // Buscar TK-USER en BD
+      const usuarios = await ejecutarConsulta(
+    "SELECT token FROM usuario WHERE email_interno = ?",
+    [Resultado.email_interno]
+);
+      const usuario = usuarios[0];
+        if (usuario.token === token) {
+            return Resultado; //jwt.verify
         } else {
             return false;
         }

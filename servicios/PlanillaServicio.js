@@ -11,7 +11,7 @@ class PlanillaServicio {
     async get() {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`planilla`" ) }
 
-  async update(fechaInicio, fechaFin,Id,usuarioId) {
+  async update(Id,fechaFin,fechaInicio,usuarioId) {
     const resultado= await ejecutarConsulta("UPDATE `planilla` SET `fechaInicio` = ?, `fechaFin` = ? WHERE `planilla_id` = ?",
     [fechaInicio, fechaFin,Id]);
 

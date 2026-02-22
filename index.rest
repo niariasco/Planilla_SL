@@ -1,7 +1,6 @@
 ###
 @BASE_URL = http://localhost
-
-//Ejemplo
+@AUTH_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xfaWQiOjQsImVtYWlsX2ludGVybm8iOiJtYXJnb0BmZm9mc2FyY2hpIiwiaWF0IjoxNzcxNzE5MzQxLCJleHAiOjE3NzE3MTk5NDF9.IKJvBGl_issvWdgWpMafPraTxgCHOeoIq-RvYyRLG30
 ###
 GET {{ BASE_URL }}/Servicio1/listar2 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
@@ -164,65 +163,6 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 
-//Usuario
-###
-GET {{ BASE_URL }}/UsuarioServicio/get HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-###
-GET {{ BASE_URL }}/UsuarioServicio/get/1 HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-###
-PUT {{ BASE_URL }}/UsuarioServicio/update/100 HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-
-{
-  "email_interno": "MILE@ffofsarchi",
-  "password":  "Temp@123",
-  "rol_id": "4",
-  "empleado_id":"101"
-  }
-###
-POST {{ BASE_URL }}/UsuarioServicio/create HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-
-{
-  "email_interno": "RUSO@ffofsarchi",
-  "password":  "RUSO",
-  "rol_id": "1",
-  "empleado_id":"101"
-  }
-###
-DELETE {{ BASE_URL }}/UsuarioServicio/delete/0 HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-//USUARIO-TOKEN
-###
-POST {{ BASE_URL }}/UsuarioServicio/autenticarToken HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-
-###
-POST {{ BASE_URL }}/UsuarioServicio/validarToken HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-
-###
-POST {{ BASE_URL }}/UsuarioServicio/desautenticarToken HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-
 
 //Empleado  
 ###
@@ -273,6 +213,50 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 
+
+
+//Usuario
+###
+GET {{ BASE_URL }}/UsuarioServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/UsuarioServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/UsuarioServicio/update/100 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+{
+  "email_interno": "ADOLF@ffofsarchi",
+  "password":  "12345",
+  "rol_id": "4",
+  "empleado_id":"101"
+  }
+###
+POST {{ BASE_URL }}/UsuarioServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+{
+  "email_interno": "RUSO@ffofsarchi",
+  "password":  "RUSO",
+  "rol_id": "1",
+  "empleado_id":"101"
+  }
+###
+DELETE {{ BASE_URL }}/UsuarioServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+
 //Planilla 
 ###
 GET {{ BASE_URL }}/PlanillaServicio/get HTTP/1.1
@@ -289,43 +273,28 @@ PUT {{ BASE_URL }}/PlanillaServicio/update/1 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "fechaInicio": "2026-02-15",
+  "fechaFin": "2026-02-28"
+}
 ###
 POST {{ BASE_URL }}/PlanillaServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "fechaInicio": "2026-02-14",
+  "fechaFin": "2026-02-29"
+}
 ###
-DELETE {{ BASE_URL }}/PlanillaServicio/delete/0 HTTP/1.1
+DELETE {{ BASE_URL }}/PlanillaServicio/delete/101 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 
-//Comprobante detalle 
-###
-GET {{ BASE_URL }}/CDetalleServicio/get HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-###
-GET {{ BASE_URL }}/CDetalleServicio/get/1 HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-###
-PUT {{ BASE_URL }}/CDetalleServicio/update/1 HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-###
-POST {{ BASE_URL }}/CDetalleServicio/create HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
-###
-DELETE {{ BASE_URL }}/CDetalleServicio/delete/0 HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
-Content-Type: application/json
-Origin: {{ BASE_URL }}
+
 //Comprobante pago 
 ###
 GET {{ BASE_URL }}/CPagoServicio/get HTTP/1.1
@@ -339,20 +308,83 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 
 ###
-PUT {{ BASE_URL }}/CPagoServicio/update/1 HTTP/1.1
+PUT {{ BASE_URL }}/CPagoServicio/update/142 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "planilla_id":"102",
+  "empleado_id":"1",
+  "salarioBruto": "1500000.00",
+  "totalBeneficios": "1500.00",
+  "totalDeducciones": "150000.00",
+  "salarioNeto": "1550000.00"
+}
 ###
 POST {{ BASE_URL }}/CPagoServicio/create HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+{
+  "planilla_id":"102",
+  "empleado_id":"1",
+  "salarioBruto": "1300000.00",
+  "totalBeneficios": "1100.00",
+  "totalDeducciones": "110000.00",
+  "salarioNeto": "1530000.00"
+}
 ###
 DELETE {{ BASE_URL }}/CPagoServicio/delete/0 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
+
+
+//Comprobante detalle 
+###
+GET {{ BASE_URL }}/CDetalleServicio/get HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+GET {{ BASE_URL }}/CDetalleServicio/get/1 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+###
+PUT {{ BASE_URL }}/CDetalleServicio/update/182 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+{
+  "comprobantePago_id":"142",
+  "concepto_id":"1",
+  "cantidad": "2",
+  "monto": "5500.00"
+}
+###
+POST {{ BASE_URL }}/CDetalleServicio/create HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+{
+  "comprobantePago_id":"142",
+  "concepto_id":"1",
+  "cantidad": "4",
+  "monto": "1100.00"
+}
+###
+DELETE {{ BASE_URL }}/CDetalleServicio/delete/0 HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+
+
 //Auditoria
 ###
 GET {{ BASE_URL }}/AuditoriaServicio/get HTTP/1.1
@@ -365,8 +397,29 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 
+//USUARIO-TOKEN
+###
+POST {{ BASE_URL }}/UsuarioServicio/autenticarToken HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
 
 {
-  "Usuario": "root",
-  "nombre": "root"
+  "email_interno": "margo@ffofsarchi",
+  "password": "1234"
+}
+###
+POST {{ BASE_URL }}/UsuarioServicio/validarToken HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+###
+POST {{ BASE_URL }}/UsuarioServicio/desautenticarToken HTTP/1.1
+Authorization: Bearer {{ AUTH_TOKEN }}
+Content-Type: application/json
+Origin: {{ BASE_URL }}
+
+{
+  "email_interno": "margo@ffofsarchi"
 }
