@@ -16,7 +16,7 @@ Router.post('/create', async (solicitud, respuesta, next) => {
   return respuesta.json(await UsuarioServicio.create(solicitud.body.email_interno,solicitud.body.password, solicitud.body.rol_id, solicitud.body.empleado_id,1));
 });
 Router.delete('/delete/:Id', async (solicitud, respuesta, next) => {
-  return respuesta.json(await UsuarioServicio.delete(solicitud.params.Id));
+  return respuesta.json(await UsuarioServicio.delete(solicitud.params.Id,1));
 });
 
 // Autenticación -TOKEN

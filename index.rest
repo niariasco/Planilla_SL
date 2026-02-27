@@ -1,6 +1,6 @@
 ###
 @BASE_URL = http://localhost
-@AUTH_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xfaWQiOjQsImVtYWlsX2ludGVybm8iOiJtYXJnb0BmZm9mc2FyY2hpIiwiaWF0IjoxNzcxNzE5MzQxLCJleHAiOjE3NzE3MTk5NDF9.IKJvBGl_issvWdgWpMafPraTxgCHOeoIq-RvYyRLG30
+@AUTH_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xfaWQiOjQsImVtYWlsX2ludGVybm8iOiJBRE9MRkBmZm9mc2FyY2hpIiwiaWF0IjoxNzcyMTY5NTc1LCJleHAiOjE3NzIxNzAxNzV9.VbiLfbpYd33PZ4gUfr3YBA-fZtr5AWQRiYy7oVOfyAE
 ###
 GET {{ BASE_URL }}/Servicio1/listar2 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
@@ -201,14 +201,14 @@ Origin: {{ BASE_URL }}
   "nombre": "ADOLFO",
   "departamento_id": "1",
   "puesto_id": "1",
-  "cedula": "105550699",
+  "cedula": "107770966",
   "apellido": "ARIAS",
   "fecha_ingreso": "2020-08-15",
   "salario_actual": "50",
   "estado": "ACTIVO"
 }
 ###
-DELETE {{ BASE_URL }}/EmpleadoServicio/delete/0 HTTP/1.1
+DELETE {{ BASE_URL }}/EmpleadoServicio/delete/101 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -222,12 +222,12 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-GET {{ BASE_URL }}/UsuarioServicio/get/1 HTTP/1.1
+GET {{ BASE_URL }}/UsuarioServicio/get/103 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/UsuarioServicio/update/100 HTTP/1.1
+PUT {{ BASE_URL }}/UsuarioServicio/update/105 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -245,13 +245,13 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 
 {
-  "email_interno": "RUSO@ffofsarchi",
-  "password":  "RUSO",
+  "email_interno": "JORG@ffofsarchi",
+  "password":  "123",
   "rol_id": "1",
   "empleado_id":"101"
   }
 ###
-DELETE {{ BASE_URL }}/UsuarioServicio/delete/0 HTTP/1.1
+DELETE {{ BASE_URL }}/UsuarioServicio/delete/105 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -405,8 +405,8 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 
 {
-  "email_interno": "margo@ffofsarchi",
-  "password": "1234"
+  "email_interno": "ADOLF@ffofsarchi",
+  "password": "12345"
 }
 ###
 POST {{ BASE_URL }}/UsuarioServicio/validarToken HTTP/1.1
@@ -421,5 +421,5 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 
 {
-  "email_interno": "margo@ffofsarchi"
+  "email_interno": "ADOLF@ffofsarchi"
 }

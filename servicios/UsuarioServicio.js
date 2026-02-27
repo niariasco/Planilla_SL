@@ -19,8 +19,9 @@ class UsuarioServicio {
     return await ejecutarConsulta("SELECT * FROM `planilla`.`usuario`") 
   }
     async update(Id,email_interno, password, rol_id, empleado_id,usuario_id) {
+    const passwordHash = await bcrypt.hash(password, 10);
     const resultado =  await ejecutarConsulta("UPDATE `usuario` SET `email_interno` = ?, `password` = ?, `rol_id` = ?, `empleado_id` = ? WHERE `usuario_id` = ?",
-    [email_interno, password, rol_id, empleado_id,Id]);
+    [email_interno, passwordHash, rol_id, empleado_id,Id]);
 
   await ejecutarConsulta(
       "INSERT INTO `auditoria` SET `usuario_id` = ?, `accion` = ?, `descripcion` = ?",
@@ -28,8 +29,10 @@ class UsuarioServicio {
     return resultado;
 }
     async create(email_interno, password, rol_id, empleado_id,usuario_id) {
+    const passwordHash = await bcrypt.hash(password, 10); //Salt rounds
+    
     const resultado =  await ejecutarConsulta("INSERT INTO `usuario` SET `email_interno` = ?, `password` = ?, `rol_id` = ?, `empleado_id` = ?",
-    [email_interno, password, rol_id, empleado_id]);
+    [email_interno, passwordHash, rol_id, empleado_id]);
    await ejecutarConsulta(
       "INSERT INTO `auditoria` SET `usuario_id` = ?, `accion` = ?, `descripcion` = ?",
       [usuario_id, "CREATE", `Se creó el usuario ${email_interno}`]);
