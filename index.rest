@@ -1,9 +1,6 @@
 ###
 @BASE_URL = http://localhost
-@AUTH_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xfaWQiOjQsImVtYWlsX2ludGVybm8iOiJBRE9MRkBmZm9mc2FyY2hpIiwiaWF0IjoxNzcyMTY5NTc1LCJleHAiOjE3NzIxNzAxNzV9.VbiLfbpYd33PZ4gUfr3YBA-fZtr5AWQRiYy7oVOfyAE
-###
-GET {{ BASE_URL }}/Servicio1/listar2 HTTP/1.1
-Authorization: Bearer {{ AUTH_TOKEN }}
+@AUTH_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xfaWQiOjQsImVtYWlsX2ludGVybm8iOiJBRE9MRkBmZm9mc2FyY2hpIiwiaWF0IjoxNzcyMjQ0NDU5LCJleHAiOjE3NzIyNDUwNTl9.Uip6Kc_tf4UNwMJq8wmmEc0emf_S3iRQH1Cj4v0U_kM
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
@@ -57,18 +54,18 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-GET {{ BASE_URL }}/RolServicio/get/1 HTTP/1.1
+GET {{ BASE_URL }}/RolServicio/get/16 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/RolServicio/update/13 HTTP/1.1
+PUT {{ BASE_URL }}/RolServicio/update/16 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 
 {
-  "nombre": "Recursos Humanos"
+  "nombre": "Books"
 }
 
 ###
@@ -208,7 +205,7 @@ Origin: {{ BASE_URL }}
   "estado": "ACTIVO"
 }
 ###
-DELETE {{ BASE_URL }}/EmpleadoServicio/delete/101 HTTP/1.1
+DELETE {{ BASE_URL }}/EmpleadoServicio/delete/102 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -222,12 +219,12 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-GET {{ BASE_URL }}/UsuarioServicio/get/103 HTTP/1.1
+GET {{ BASE_URL }}/UsuarioServicio/get/106 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-PUT {{ BASE_URL }}/UsuarioServicio/update/105 HTTP/1.1
+PUT {{ BASE_URL }}/UsuarioServicio/update/106 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -251,7 +248,7 @@ Origin: {{ BASE_URL }}
   "empleado_id":"101"
   }
 ###
-DELETE {{ BASE_URL }}/UsuarioServicio/delete/105 HTTP/1.1
+DELETE {{ BASE_URL }}/UsuarioServicio/delete/108 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -264,7 +261,7 @@ Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
 ###
-GET {{ BASE_URL }}/PlanillaServicio/get/1 HTTP/1.1
+GET {{ BASE_URL }}/PlanillaServicio/get/103 HTTP/1.1
 Authorization: Bearer {{ AUTH_TOKEN }}
 Content-Type: application/json
 Origin: {{ BASE_URL }}
@@ -275,7 +272,7 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 
 {
-  "fechaInicio": "2026-02-15",
+  "fechaInicio": "2026-02-13",
   "fechaFin": "2026-02-28"
 }
 ###
@@ -285,8 +282,8 @@ Content-Type: application/json
 Origin: {{ BASE_URL }}
 
 {
-  "fechaInicio": "2026-02-14",
-  "fechaFin": "2026-02-29"
+  "fechaInicio": "2026-02-15",
+  "fechaFin": "2026-01-29"
 }
 ###
 DELETE {{ BASE_URL }}/PlanillaServicio/delete/101 HTTP/1.1

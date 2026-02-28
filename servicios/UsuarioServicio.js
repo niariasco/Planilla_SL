@@ -104,14 +104,14 @@ try{
         try {
             token = solicitud.headers.authorization.split(" ")[1]; //portador|Bearer [0], Token [1]
         } catch (err) {
-            return err;
+            return false;
         }
         let Resultado; 
         // Validación del token
         try {
             Resultado = await jwt.verify(token, this.PalabraSecreta); // payload: ({ rol_id, email_interno }, Secreta2026)
         } catch (err) {
-            return err;
+            return false;
         }
     // Buscar TK-USER en BD
       const usuarios = await ejecutarConsulta(
